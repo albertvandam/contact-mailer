@@ -35,7 +35,8 @@ $content = json_decode(file_get_contents('php://input'), true);
 // check that captcha value is set if we expect it
 $captchaConfig = Config::getConfig('recaptcha', []);
 if (isset($captchaConfig['enabled']) && $captchaConfig['enabled']) {
-    if (!isset($_POST['captcha'])) {
+    if (!isset($content['captcha'])) {
+        error_log('Captcha not set! ' . var_export($content, true));
         endRequest([
             'error' => 'Bad Request'
         ], 'HTTP/1.1 400 Bad Request');
@@ -43,7 +44,8 @@ if (isset($captchaConfig['enabled']) && $captchaConfig['enabled']) {
 }
 
 // check other fields are set
-if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message'])) {
+if (!isset($content['name']) || !isset($content['email']) || !isset($content['message'])) {
+    error_log('Name/Email/Message not set! ' . var_export($content, true));
     endRequest([
         'error' => 'Bad Request'
     ], 'HTTP/1.1 400 Bad Request');
