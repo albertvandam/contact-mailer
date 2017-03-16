@@ -1,0 +1,4 @@
+.idea/
+vendor/
+config/contact.config.php
+config/email.template.html

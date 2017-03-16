@@ -1,0 +1,33 @@
+<!--
+Email Template
+
+**Copy** to email.template.html and amend as needed
+
+Placeholders (All values are escaped):
+{subject} - Email subject configured in contact.config.php
+{name} - Name received
+{email} - Email received
+{message} - Message
+-->
+<html>
+<head>
+    <title>{subject}</title>
+</head>
+<body>
+<p>{subject}</p>
+<table>
+    <tr>
+        <th valign="top">Name</th>
+        <td>{name}</td>
+    </tr>
+    <tr>
+        <th valign="top">Email</th>
+        <td>{email}</td>
+    </tr>
+    <tr>
+        <th valign="top">Message</th>
+        <td>{message}</td>
+    </tr>
+</table>
+</body>
+</html>

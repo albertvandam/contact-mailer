@@ -1,0 +1,33 @@
+<?php
+/**
+ * Contact Form handler configuration
+ *
+ * ***COPY*** This file to contact.config.php and amend as needed
+ */
+return [
+    // REGEX to filter ORIGIN allowed to use form
+    'origin'    => '/^(http:\/\/localhost:(\d*)$)/',
+
+    // Google ReCaptcha
+    'recaptcha' => [
+        'enabled' => false,
+        'secret'  => ''
+    ],
+
+    // Email subject
+    'subject'   => 'Email Subject',
+
+    // Email Sender
+    'sender'    => 'Email@from.where.com',
+
+    // Email Recipient
+    'recipient' => 'Email@to.where.com',
+
+    // SMTP Server settings
+    'smtp'      => [
+        'server'   => 'smtp.gmail.com',
+        'port'     => 465,
+        'user'     => 'GMAIL USER NAME',
+        'password' => 'GMAIL PASSWORD'
+    ]
+];
